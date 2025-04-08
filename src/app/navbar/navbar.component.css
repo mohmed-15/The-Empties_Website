@@ -1,0 +1,162 @@
+.custom-btn {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: rgb(20, 20, 20);
+  border: 2px solid #ffc107;
+  font-weight: 600;
+  overflow: hidden;
+  transition: color 0.7s ease;
+  z-index: 10;
+  color: white;
+}
+
+.custom-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc107;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+  right: -100%;
+  top: 10%;
+  transform: translateY(-25%) scale(1);
+  z-index: -1;
+}
+
+.custom-btn:hover::before {
+  right: 0;
+  transform: scale(1.5);
+}
+
+.custom-btn:hover {
+  color: rgb(0, 0, 0);
+}
+
+
+/* ///////////////////////START THE COMTOMIZE THE NAVBAR/////////////////////// */
+.navbar {
+  backdrop-filter: blur(4px);
+}
+
+.nav-item a {
+  color: white;
+}
+.nav-item a {
+  transition: transform 0.3s ease-out;
+}
+
+.nav-item:hover a {
+  transform: scale(1.6);
+}
+.nav-item a::before,
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 0%;
+  background-color: #ffc107;
+  transition: height 0.4s ease-in-out;
+}
+/* LEFT THE RIGHT LINE */
+.nav-item a::before {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* HIGHT THE RIGHT LINE */
+.nav-item a::after {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* SIZE THE LINE AND WORDS */
+.nav-item:hover a::before,
+.nav-item:hover a::after {
+  height: 100%;
+}
+
+
+
+/* 🔹 تحسين التأثير على الشاشات الصغيرة */
+@media screen and (max-width: 1200px) {
+  .nav-item:hover a {
+    transform: scale(1.2); /* تقليل التأثير */
+  }
+
+  .nav-item a::before,
+  .nav-item a::after {
+    width: 3px; /* جعل الخطوط أرفع */
+  }
+
+  .nav-item:hover a::before,
+  .nav-item:hover a::after {
+    height: 50%; /* تقليل طول الخطوط */
+  }
+}
+@media screen and (max-width: 1200px) {
+  .custom-btn {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .menu-list {
+    justify-content: center !important; /* يجعل العناصر في المنتصف */
+    width: 100%; /* يضمن توسيع القائمة على العرض بالكامل */
+  }
+}
+
+
+
+
+
+
+
+
+/* ضبط شريط التنقل في الشاشات الكبيرة */
+@media screen and (min-width: 1024px) {
+  .navbar {
+    background: transparent !important; /* جعل الخلفية شفافة */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid white; /* إضافة خط سفلي */
+    padding: 15px 80px; /* ضبط الهوامش */
+  }
+
+  .navbar .menu-list {
+    display: flex;
+    justify-content: center; /* توسيط القوائم */
+    align-items: center;
+    gap: 50px; /* توسيع المسافات بين العناصر */
+  }
+
+  .navbar .menu-list a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+
+  .navbar .menu-list a:hover {
+    color: #ffc107;
+  }
+
+  .contact-button {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .contact-button:hover {
+    background: yellow;
+    color: black;
+  }
+}
